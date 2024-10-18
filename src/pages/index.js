@@ -27,7 +27,7 @@ const Interior = () => {
     <ThemeProvider theme={interiorTheme}>
       <Fragment>
         <Head>
-          <title>Interior | A react next landing page</title>
+          <title>EC Painting</title>
           <meta name="theme-color" content="#171717" />
           <meta name="description" content="EC Panting landing page" />
           <meta name="keywords" content="EC Panting" />

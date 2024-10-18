@@ -34,16 +34,6 @@ export const menuData = [
     offset: "80",
   },
   {
-    label: "Team",
-    path: "#team",
-    offset: "80",
-  },
-  {
-    label: "News",
-    path: "#news",
-    offset: "40",
-  },
-  {
     label: "Testimonial",
     path: "#testimonial",
     offset: "80",
@@ -92,6 +82,7 @@ import { dribbble } from "react-icons-kit/fa/dribbble";
 /* ------------------------------------ */
 import { facebook } from "react-icons-kit/fa/facebook";
 import { googlePlus } from "react-icons-kit/fa/googlePlus";
+import { instagram } from "react-icons-kit/fa/instagram";
 import { skype } from "react-icons-kit/fa/skype";
 import { twitter } from "react-icons-kit/fa/twitter";
 import { socialDribbble } from "react-icons-kit/ionicons/socialDribbble";
@@ -404,35 +395,17 @@ export const footerData = {
   mail: "cardenasesteban27@gmail.com",
   phone: "(832)-853-7441",
   socialLinks: [
-    {
-      id: 1,
-      icon: <Icon icon={facebook} />,
-      name: "facebook",
-      link: "#",
-    },
-    {
-      id: 2,
-      icon: <Icon icon={dribbble} />,
-      name: "dribbble",
-      link: "#",
-    },
-    {
-      id: 3,
-      icon: <Icon icon={googlePlus} />,
-      name: "googlePlus",
-      link: "#",
-    },
-    {
-      id: 4,
-      icon: <Icon icon={skype} />,
-      name: "skype",
-      link: "#",
-    },
+    // {
+    //   id: 1,
+    //   icon: <Icon icon={facebook} />,
+    //   name: "facebook",
+    //   link: "#",
+    // },
     {
       id: 5,
-      icon: <Icon icon={twitter} />,
-      name: "twitter",
-      link: "#",
+      icon: <Icon icon={instagram} />,
+      name: "Instagram",
+      link: "https://www.instagram.com/e.c_painting/",
     },
   ],
   menuWidgets: [
@@ -563,28 +536,8 @@ export const footerData = {
 /* ------------------------------------ */
 export const socialProfile = [
   {
-    id: 1,
-    icon: "flaticon-facebook-logo",
-    link: "#",
-  },
-  {
-    id: 2,
-    icon: "flaticon-twitter-logo-silhouette",
-    link: "#",
-  },
-  {
     id: 3,
     icon: "flaticon-instagram",
-    link: "#",
-  },
-  {
-    id: 4,
-    icon: "flaticon-tumblr-logo",
-    link: "#",
-  },
-  {
-    id: 5,
-    icon: "flaticon-dribble-logo",
-    link: "#",
+    link: "https://www.instagram.com/e.c_painting/",
   },
 ];
