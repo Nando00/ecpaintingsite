@@ -326,53 +326,33 @@ export const testimonialData = {
   reviews: [
     {
       id: 0,
-      name: "Parker Joe",
-      designation: "Co-Founder & CEO",
-      username: "@amader craft",
+      name: "John Flores",
+      designation: "",
+      username: "",
       account_url: "#",
       comment:
-        "Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.",
+        "We had a wonderful experience with E.C Painting. They were incredibly helpful in guiding us to choose the perfect colors for our home. The painting process was smooth and seamless.",
       avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     },
     {
       id: 1,
-      name: "Britney havana",
-      designation: "Co-Founder & CEO",
-      username: "@Light’s craft",
+      name: "Luara Garza",
+      designation: "",
+      username: "",
       account_url: "#",
       comment:
-        "Impressed with master class support of the team and really look forward for the future.Really, really well made! Love that each component is handmade and customized. Great Work :)",
+        "We were thoroughly impressed with the quality of workmanship and customer service from E.C Painting. Our freshly painted walls look incredible.",
       avatar: "https://randomuser.me/api/portraits/women/63.jpg",
     },
     {
       id: 2,
-      name: "June Spears",
-      designation: "Co-Founder & CEO",
-      username: "@Eagle’s craft",
+      name: "Lina Spears",
+      designation: "",
+      username: "",
       account_url: "#",
       comment:
-        "Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.",
+        "We couldn't be happier with the exceptional work from E.C Painting. The attention to detail and professionalism truly exceeded our expectations. Our home looks amazing!",
       avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-    {
-      id: 3,
-      name: "Jessica Parker",
-      designation: "Co-Founder & CEO",
-      username: "@Earth’s craft",
-      account_url: "#",
-      comment:
-        "Impressed with master class support of the team and really look forward for the future.Really, really well made! Love that each component is handmade and customized. Great Work !",
-      avatar: "https://randomuser.me/api/portraits/men/63.jpg",
-    },
-    {
-      id: 4,
-      name: "Django Dsuja",
-      designation: "Co-Founder & CEO",
-      username: "@Moon’s craft",
-      account_url: "#",
-      comment:
-        "Impressed with master class support of the team and really look forward for the future.Really, really well made! Love that each component is handmade and customized. Great Work :)",
-      avatar: "https://randomuser.me/api/portraits/men/43.jpg",
     },
   ],
 };

@@ -38,7 +38,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
           logoStyle={logoStyle}
         />
         <div style={{ display: "flex", alignItems: "center" }}>
-          <SearchDialog
+          {/* <SearchDialog
             label={
               <Button
                 variant="textButton"
@@ -47,8 +47,8 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
               />
             }
             content={<SearchPanel />}
-          />
-          <LoginDialog
+          /> */}
+          {/* <LoginDialog
             label={
               <Button
                 variant="textButton"
@@ -57,7 +57,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
               />
             }
             content={<LoginModal />}
-          />
+          /> */}
           <Drawer
             width="420px"
             placement="right"
