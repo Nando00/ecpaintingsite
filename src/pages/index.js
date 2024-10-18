@@ -31,6 +31,10 @@ const Interior = () => {
           <meta name="theme-color" content="#171717" />
           <meta name="description" content="EC Panting landing page" />
           <meta name="keywords" content="EC Panting" />
+
+          {/* open graph tags for social media sharing */}
+          <meta property="og:image" content="/kitchen2.jpg" />
+
           <link
             href="https://fonts.googleapis.com/css?family=Raleway:500,600&display=swap"
             rel="stylesheet"
