@@ -19,7 +19,7 @@ out
 .env.development.local
 .env.test.local
 .env.production.local
-
+.env
 # Packages have their independent repo
 /packages
 
