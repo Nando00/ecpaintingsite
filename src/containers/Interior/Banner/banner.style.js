@@ -52,7 +52,7 @@ const BannerWrapper = styled.div`
 export const Container = styled.div`
   width: 100%;
   max-width: 1580px;
-  min-height: 50vh;
+  min-height: 70vh;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;

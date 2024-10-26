@@ -6,11 +6,13 @@ import Heading from "common/components/Heading";
 import NextImage from "common/components/NextImage";
 import Text from "common/components/Text";
 import Image from "common/components/Image";
-import Button from "common/components/Button";
 import Input from "common/components/Input";
+import Button from "common/components/Button";
 import GlideCarousel from "common/components/GlideCarousel";
 import GlideSlide from "common/components/GlideCarousel/glideSlide";
 import { CircleLoader } from "../interior.style";
+import { toast } from "react-toastify";
+
 import BannerWrapper, {
   Container,
   Overlay,
@@ -23,9 +25,13 @@ import BannerWrapper, {
 
 import { bannerData } from "common/data/Interior";
 import { Fade } from "react-awesome-reveal";
+import { useForm, Controller } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 const Banner = () => {
   const { discount, discountLabel, title, text, carousel } = bannerData;
+
   const glideOptions = {
     type: "carousel",
     perView: 3,
@@ -42,39 +48,40 @@ const Banner = () => {
       },
     },
   };
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues: {
+      email: "", // Set the default value for the email field
+    },
+  });
+  const [message, setMessage] = useState(null);
 
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-  }, []);
+  const mutation = useMutation({
+    mutationFn: (newEmail) => {
+      return axios.post("/api/subscribe", { email: newEmail });
+    },
+    onSuccess: () => {
+      toast.success("Email added successfully!");
+      reset(); // Reset the form after successful submission
+    },
+    onError: (error) => {
+      if (error.response) {
+        setMessage(error.response.data.error);
+      } else {
+        setMessage("Something went wrong. Please try again.");
+      }
+    },
+  });
 
-  const [state, setState] = useState({ email: "", valid: "" });
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-  const handleOnChange = (e) => {
-    let value = "";
-    if (e.target.value.match(emailRegex)) {
-      if (e.target.value.length > 0) {
-        value = e.target.value;
-        setState({ ...state, email: value, valid: "valid" });
-      }
-    } else {
-      if (e.target.value.length > 0) {
-        setState({ ...state, valid: "invalid" });
-      } else {
-        setState({ ...state, valid: "" });
-      }
-    }
+  const onSubmit = (data) => {
+    mutation.mutate(data.email);
   };
-
-  const handleSubscriptionForm = (e) => {
-    e.preventDefault();
-    if (state.email.match(emailRegex)) {
-      console.log(state.email);
-      setState({ email: "", valid: "" });
-    }
-  };
-
   return (
     <BannerWrapper>
       <Overlay />
@@ -86,17 +93,32 @@ const Banner = () => {
             </HighlightedText>
             <Heading as="h1" content={title} />
             <Text content={text} />
-            <FormWrapper onSubmit={handleSubscriptionForm}>
-              <Input
-                className={state.valid}
-                type="email"
-                placeholder="Enter email address"
-                icon={<Icon icon={iosEmailOutline} />}
-                iconPosition="left"
-                required={true}
-                onChange={handleOnChange}
-                aria-label="email"
+            <FormWrapper onSubmit={handleSubmit(onSubmit)}>
+              <Controller
+                name="email"
+                control={control}
+                rules={{
+                  required: "Email is required",
+                  pattern: {
+                    value: emailRegex,
+                    message:
+                      "Please enter a valid email address with letters, numbers, and a single period for the domain",
+                  },
+                }}
+                render={({ field }) => (
+                  <Input
+                    {...field}
+                    inputType="email"
+                    placeholder="Enter email address"
+                    className={errors.email ? "invalid" : "valid"}
+                  />
+                )}
               />
+              {errors.email && (
+                <p style={{ color: "red", marginTop: "5px" }}>
+                  {errors.email.message}
+                </p>
+              )}
               <ButtonGroup>
                 <Button
                   type="submit"
