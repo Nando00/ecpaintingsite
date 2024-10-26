@@ -5,9 +5,10 @@
   "main": "firebaseFunctions.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "export": "next build && next export",
+    "postinstall": "prisma generate",
     "serve": "npm run build && firebase emulators:start --only functions,hosting",
     "shell": "npm run build && firebase functions:shell",
     "deploy": "firebase deploy --only functions,hosting",
